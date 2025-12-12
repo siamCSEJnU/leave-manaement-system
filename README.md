@@ -39,3 +39,31 @@ cd leave-management-system
 composer install
 cp .env.example .env
 php artisan key:generate
+```
+
+## Edit .env:
+```bash
+DB_DATABASE=leave_db
+DB_USERNAME=root
+DB_PASSWORD=
+```
+## Run Server
+```bash
+php artisan migrate --seed
+php artisan serve
+```
+
+## Login credentials
+- Admin: admin@company.com → 123456
+- Manager: manager@company.com → 123456
+- Employee: sifat@company.com → 123456
+
+## Tech Stack
+- Laravel 12
+- MySQL
+- tymon/jwt-auth
+- Carbon for date handling
+
+## Author
+Siam Ahmed
+Dhaka, Bangladesh
