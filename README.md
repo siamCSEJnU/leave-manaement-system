@@ -5,6 +5,7 @@ A modern, clean, production-ready **Leave Management System API** built with:
 - Role-Based Access Control (Employee | Manager | Admin)
 - MySQL
 - Full CRUD + Approve/Reject Workflow
+
 ## Features
 
 - JWT Login / Logout / Refresh
