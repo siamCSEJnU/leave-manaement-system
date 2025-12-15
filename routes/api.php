@@ -20,7 +20,10 @@ Route::middleware('auth:api')->group(function () {
     });
     Route::middleware('role:admin')->group(function () {
         Route::apiResource('users', UserController::class);
+        Route::post('users/{user}/deactivate', [UserController::class, 'deactivate']);
+        Route::post('users/{user}/activate', [UserController::class, 'activate']);
     });
+    
     
 });
 

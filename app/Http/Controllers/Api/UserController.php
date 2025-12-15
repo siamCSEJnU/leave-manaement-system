@@ -80,7 +80,27 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        $user->update(['is_active' => false]); 
+    
+        if ($user->id === auth('api')->user()->id) {
+            return response()->json(['message' => 'You cannot delete yourself'], 400);
+        }
+
+    
+        $user->delete();
+
+        return response()->json(['message' => 'User permanently deleted']);
+    }
+
+
+    public function deactivate(User $user)
+    {
+        $user->update(['is_active' => false]);
         return response()->json(['message' => 'User deactivated']);
+    }
+
+    public function activate(User $user)
+    {
+        $user->update(['is_active' => true]);
+        return response()->json(['message' => 'User activated']);
     }
 }
